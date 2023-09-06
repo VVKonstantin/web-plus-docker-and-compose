@@ -7,13 +7,9 @@ import { JwtModule } from '@nestjs/jwt';
 import { HashModule } from 'src/hash/hash.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
-import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      envFilePath: '.env.development',
-    }),
     UsersModule,
     PassportModule,
     HashModule,
