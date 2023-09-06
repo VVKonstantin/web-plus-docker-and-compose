@@ -82,10 +82,20 @@ export class WishlistsService {
   }
 
   async remove(id: number, userId: number) {
-    const wishlist = await this.findOne(id);
+    const wishlist = await this.wishlistRepository.findOne({
+      relations: {
+        owner: true,
+      },
+      where: {
+        id,
+        owner: {
+          id: userId,
+        },
+      },
+    });
     if (wishlist.owner.id !== userId)
       throw new ForbiddenException('Удалять чужие вишлисты нельзя');
-    await this.wishlistRepository.delete(id);
+    await this.wishlistRepository.remove(wishlist);
     return wishlist;
   }
 }
