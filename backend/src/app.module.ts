@@ -19,8 +19,6 @@ const {
   POSTGRES_DB,
 } = process.env;
 
-console.log(POSTGRES_PASSWORD);
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
