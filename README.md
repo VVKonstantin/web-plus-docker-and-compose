@@ -1,3 +1,10 @@
-# Докеризация приложения
+# Dockerizing app
 
-Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
+1. Setting up a remote server including SSL certificates
+2. Dockerizing app
+
+* IP 51.250.65.156
+
+* frontend https://vkvkupipodari.nomoredomainsicu.ru/
+
+* backend https://api.vkvkupipodari.nomoredomainsicu.ru/
